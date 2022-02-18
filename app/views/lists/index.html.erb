@@ -1,7 +1,9 @@
 <h1>Lists</h1>
-<ul>
-<% @lists.each do |list| %>
-  <li><%= list.name %><%= link_to "More", list_path(list) %></li>
-<% end %>
-</ul>
+<div class="grid-container">
+  <div class="row justify-content-between">
+    <% @lists.each do |list| %>
+      <%= render 'components/card', list: list %>
+    <% end %>
+  </div>
+</div>
 <%= link_to "New list", new_list_path %>
